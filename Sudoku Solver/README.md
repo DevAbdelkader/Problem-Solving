@@ -52,7 +52,7 @@ For each cell in the 9x9 grid:
 2. It gathers all numbers already present in the same 3x3 square, row, and column using `getSquareNums`, `getRowNums`, and `getColumnNums` respectively.  
 3. These collected numbers are combined and filtered for uniqueness.  
 4. The possible values for the current cell are determined by finding the numbers from 1-9 that are *not* present in the collected `nums`. This is done using the `differ` prototype method.  
-5. If only one possible value remains for a cell (`odds.length \== 1`), that value is immediately placed into both the working `board` and the `puzzle` (which will be returned as the solution).  
+5. If only one possible value remains for a cell (`odds.length == 1`), that value is immediately placed into both the working `board` and the `puzzle` (which will be returned as the solution).  
 6. If multiple possibilities exist, these possibilities are stored as an array in the `board` for that cell, and a blank counter is incremented.  
 7. The `process()` function calls itself recursively until no more `blank` cells can be filled in a single pass. Since the kata guarantees "easy" puzzles, this iterative elimination approach should converge to a solution.
 
@@ -63,8 +63,8 @@ For each cell in the 9x9 grid:
 * **`Array.prototype.unique()`:** A custom prototype method to remove duplicate values from an array.  
 * **`processNumsArr(arr)`:** Flattens a 2D array and filters out `0`s (empty cells), returning an array of actual numbers.  
 * **`getSquareNums(board, row, col)`:** Extracts all non-zero numbers from the 3x3 square corresponding to the given row and col indices.  
-* **`getRowNums(board, pos\_y)`:** Extracts all non-zero numbers from the specified `pos\_y` row.  
-* **`getColumnNums(board, pos\_x)`:** Extracts all non-zero numbers from the specified `pos\_x` column.
+* **`getRowNums(board, pos_y)`:** Extracts all non-zero numbers from the specified `pos_y` row.  
+* **`getColumnNums(board, pos_x)`:** Extracts all non-zero numbers from the specified `pos_x` column.
 
 This solution relies on the property of "easy" Sudokus where a direct elimination strategy is sufficient, without the need for complex backtracking algorithms.
 
